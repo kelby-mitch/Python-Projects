@@ -1,5 +1,5 @@
 import re
-with open("enter log here") as f:
+with open("enter log location here") as f:
     dict_1 = {}
     for line in  f.readlines():
         #print(line)

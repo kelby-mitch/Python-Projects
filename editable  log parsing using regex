@@ -1,0 +1,19 @@
+import re
+with open("enter log here") as f:
+    dict_1 = {}
+    for line in  f.readlines():
+        #print(line)
+        match = re.search("\d{1,3}\.\d{1,3}\.\d{1,3}.\d{1,3}", line)
+        
+        if match:
+            #print(line)
+            if "Accepted" in line:
+                src_ip = match.group(0)
+                if src_ip in dict_1:
+                    dict_1[src_ip] += 1
+                else:
+                    dict_1[src_ip] = 1
+        else:
+            pass
+        
+    print(dict_1)

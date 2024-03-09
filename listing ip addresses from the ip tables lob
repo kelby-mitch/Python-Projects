@@ -1,0 +1,12 @@
+with open('/home/labsuser/Logs/iptablesyslog.txt') as f:
+    Dic1 = {}
+    for line in f.readlines():
+        list1 = line.split()
+        if len(list1) >= 13:  # Ensure that there are at least 13 elements in the list
+            ipdest = list1[12]
+            if ipdest not in Dic1:
+                Dic1[ipdest] = 1
+            else:
+                Dic1[ipdest] += 1
+
+print(Dic1)
